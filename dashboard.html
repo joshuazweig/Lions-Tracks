@@ -1,0 +1,238 @@
+<html>
+  <head>
+    <title>
+      Chart
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel=stylesheet type="text/css" href="simplegrid.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Typs of Data Users are Tracking'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Data Types',
+            data: [
+                ['Steps',   35.0],
+                ['Flights Climbed',       26.8],
+                {
+                    name: 'Heart Rate',
+                    y: 20.9,
+                    sliced: true,
+                    selected: true
+                },
+                ['Sleep',    17.3]
+            ]
+        }]
+    });
+    });
+
+    </script>
+     <script type="text/javascript">
+    $(function () {
+    $('#bar').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'User Base Demographics'
+        },
+        subtitle: {
+            text: 'A break down of the user base by self idendifed gender'
+        },
+        xAxis: {
+            categories: [
+                '<15',
+                '16-20',
+                '21-25',
+                '26-30',
+                '31-35',
+                '36-40',
+                '41-45',
+                '46-50',
+                '51-55',
+                '55+'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Users'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Male',
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1]
+
+        }, {
+            name: 'Female',
+            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5]
+
+        }, {
+            name: 'Other',
+            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2]
+
+        }, {
+            name: 'Not Answered',
+            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1]
+
+        }]
+    });
+    });
+    </script>
+    <script type="text/javascript">
+    $(function () {
+    $('#freqs').highcharts({
+        title: {
+            text: 'Frequency of Users Commiting Data',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'A by gender break down of how many users are commiting their data each day',
+            x: -20
+        },
+        xAxis: {
+            categories: ['April 26', 'April 27', 'April 28', 'April 29', 'April 30', 'May 1', 'May 2', 'May 3', 'May 4', 'May 5', 'May 6',
+                'May 7']
+        },
+        yAxis: {
+            title: {
+                text: 'Number of Commits'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Male',
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1]
+
+        }, {
+            name: 'Female',
+            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5]
+
+        }, {
+            name: 'Other',
+            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2]
+
+        }, {
+            name: 'Not Answered',
+            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1]
+
+        }]
+    });
+    });
+    </script>
+         <script type="text/javascript">
+    $(function () {
+    $('#precentiles').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Data Commits by Precentile'
+        },
+        subtitle: {
+            text: 'A chart showing the number of commits performed by a user in each quartile based on how frequently they commit their data'
+        },
+        xAxis: {
+            categories: [
+                '25%',
+                '50%',
+                '75%',
+                '99%'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Commits (per week)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Precentile',
+            data: [1.5, 5, 6, 7]
+
+        }]
+    });
+    });
+    </script>
+  </head>
+
+  <body>
+
+    <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+    <div id="bar" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+    <div id="freqs" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+    <div id="precentiles" style="min-width: 100px; height: 400px; margin: 0 auto"></div>
+
+
+  </body>
+</html>

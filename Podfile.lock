@@ -1,0 +1,16 @@
+PODS:
+  - JBChartView (2.8.14)
+  - pop (1.0.7)
+  - SSKeychain (1.2.3)
+
+DEPENDENCIES:
+  - JBChartView
+  - pop (~> 1.0)
+  - SSKeychain
+
+SPEC CHECKSUMS:
+  JBChartView: e89eabe6aefabd863ea345f3cedbfb773674647c
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
+
+COCOAPODS: 0.35.0

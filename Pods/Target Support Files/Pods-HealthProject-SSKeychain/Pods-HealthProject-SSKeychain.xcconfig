@@ -1,0 +1,1 @@
+PODS_HEALTHPROJECT_SSKEYCHAIN_OTHER_LDFLAGS = -framework "Foundation" -framework "Security"

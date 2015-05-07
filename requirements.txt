@@ -1,0 +1,9 @@
+Flask==0.10.1
+Flask-SQLAlchemy==2.0
+Jinja2==2.7.3
+SQLAlchemy==1.0.0
+flask-heroku==0.1.9
+gunicorn==19.3.0
+virtualenv==12.1.1
+psycopg2==2.6
+simplejson==3.6.5
